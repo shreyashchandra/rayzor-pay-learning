@@ -15,7 +15,7 @@ cron.schedule("*/20 * * * * *", async () => {
       `https://rayzor-pay-learning.onrender.com/api/v1/payment/key`
     );
     console.log(
-      `Ping successful: ${res.status} - ${new Date().toLocaleTimeString()}`
+      `Ping successful: ${res.status} -- ${new Date().toLocaleTimeString()}`
     );
   } catch (error) {
     console.error("Ping failed:", error.message);
