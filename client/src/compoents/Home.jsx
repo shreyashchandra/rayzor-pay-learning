@@ -33,10 +33,12 @@ export default function Home() {
   const checkOutHandler = async (amount) => {
     const {
       data: { key },
-    } = await axios.get("http://localhost:5000/api/v1/payment/key");
+    } = await axios.get(
+      "https://rayzor-pay-learning.onrender.com/api/v1/payment/key"
+    );
 
     const { data } = await axios.post(
-      "http://localhost:5000/api/v1/payment/checkout",
+      "https://rayzor-pay-learning.onrender.com/api/v1/payment/checkout",
       {
         amount,
       }
@@ -50,7 +52,8 @@ export default function Home() {
       description: "Rayzor Pay Learning",
       image: "https://avatars.githubusercontent.com/u/78721024?v=4",
       order_id: data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-      callback_url: "http://localhost:5000/api/v1/payment/verify",
+      callback_url:
+        "https://rayzor-pay-learning.onrender.com/api/v1/payment/verify",
       prefill: {
         name: "Gaurav Kumar",
         email: "gaurav.kumar@example.com",
