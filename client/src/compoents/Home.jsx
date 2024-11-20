@@ -43,6 +43,7 @@ export default function Home() {
         amount,
       }
     );
+    console.log(data.amount, "data----->");
 
     const options = {
       key: key,
@@ -68,8 +69,6 @@ export default function Home() {
     };
     const rzp1 = new window.Razorpay(options);
     rzp1.open();
-
-    console.log(data);
   };
 
   return (
