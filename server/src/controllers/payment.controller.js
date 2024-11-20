@@ -2,7 +2,7 @@ import { instance } from "../index.js";
 
 export const checkout = async (req, res) => {
   const options = {
-    amount: Number(req.body.amount) * 10000, // amount in the smallest currency unit
+    amount: Number(req.body.amount) * 100000, // amount in the smallest currency unit
     currency: "INR",
   };
   const order = await instance.orders.create(options);
